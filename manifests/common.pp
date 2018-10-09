@@ -57,7 +57,7 @@ class multipath::common {
         notify  => Service['multipath'],
     }
 
-    if $multipath::configfile_source != '' {
+    if $multipath::configfile_source != undef {
         # Use the source or the content as the reference for the /etc/multipath.conf
         concat::fragment { "${multipath::configfile}_full":
             target => $multipath::configfile,

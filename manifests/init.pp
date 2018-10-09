@@ -20,7 +20,7 @@
 # $service_enable:: *Default*: 'true'. Ensure that multipath daemon would be started on boot
 # $service_name:: Override package name
 # $service_name:: Override package name
-# $configfile_source:: *Default*: ''. If set, the source of the multipath.conf file
+# $configfile_source:: *Default*: undef. If set, the source of the multipath.conf file
 # $configfile:: Override default configfile path
 # $FC_access_timeout:: *Default*: 150. Timeout to access a volume by Fiber Channel
 # $polling_interval:: *Default*: 5. Interval between two path checks in seconds
@@ -88,7 +88,7 @@ class multipath(
     $service_enable       = $multipath::params::service_enable,
     $service_name         = $multipath::params::service_name,
     $access_timeout       = $multipath::params::access_timeout,
-    $configfile_source    = '',
+    $configfile_source    = undef,
     $configfile           = $multipath::params::configfile,
     $polling_interval     = $multipath::params::polling_interval,
     $selector             = $multipath::params::selector,
