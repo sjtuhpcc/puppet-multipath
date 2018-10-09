@@ -112,7 +112,7 @@ define multipath::device (
     }
 
     if $multipath::configfile_source != undef {
-        fail('multipath::device cannot be used when the configfile_source attribute has been set')
+        fail('multipath::device cannot be used when the configfile_source attribute has been set to ${configfile_source}.')
     }
 
     if ! ($ensure in [ 'present', 'absent' ]) {
