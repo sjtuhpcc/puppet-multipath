@@ -111,10 +111,6 @@ define multipath::device (
         default => $vendor
     }
 
-    if $multipath::configfile_source != undef {
-        fail("multipath::device cannot be used when the configfile_source attribute has been set to ${configfile_source}.")
-    }
-
     if ! ($ensure in [ 'present', 'absent' ]) {
         fail("multipath::device 'ensure' parameter must be set to either 'absent' or 'present'")
     }
